@@ -2,7 +2,7 @@
   <div class="profile row">
     <div class="col-md-4 avatar">
       <div class="wrapper">
-        <img src="https://instuigram-avatar.jpg">
+        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=707b9c33066bf8808c934c8ab394dff6">
       </div>
     </div>
     
@@ -19,6 +19,9 @@
         <li><span>12</span> posts</li>
         <li><span>195</span> followers</li>
         <li><span>345</span> following</li>
+      </ul>
+      <ul class="posts">
+        <li><span><%= @posts.count %></span> posts</li>
       </ul>
       <h2 class="name">
         <%= current_user.name %>
@@ -47,13 +50,9 @@
   </a>
 </div>
 <div class="user-images">
-  <div class="wrapper">
-    <img src="your_image_url">
-  </div>
-  <div class="wrapper">
-    <img src="your_image_url">
-  </div>
-  <div class="wrapper">
-    <img src="your_image_url">
-  </div>
+  <% @posts.each do |post|%>
+    <div class="wrapper">
+      <%= image_tag post.image %>
+    </div>
+  <% end %>
 </div>
