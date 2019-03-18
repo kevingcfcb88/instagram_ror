@@ -2,10 +2,11 @@
   <div class="profile row">
     <div class="col-md-4 avatar">
       <div class="wrapper">
-        <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-0.3.5&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&s=707b9c33066bf8808c934c8ab394dff6">
+        <% if current_user.avatar.attached? %>
+          <%= image_tag current_user.avatar %>
+        <%end %>
       </div>
-    </div>
-    
+    </div>    
     <div class="col-md-8 basic-info">
       <div class="user-wrapper">
         <h2 class="username">
